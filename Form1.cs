@@ -47,6 +47,7 @@ namespace CRUD
             c.ExecuteNonQuery();
             MessageBox.Show("Successfully Inserted...!");
             GetEmployeeList();
+            con.Close();
         }
 
         void GetEmployeeList()
@@ -66,12 +67,34 @@ namespace CRUD
         private void button1_Click(object sender, EventArgs e)
         {
             //Update Btn
+            int empid = int.Parse(txtempID.Text);
+            String empName = txtempName.Text;
+            String city = cmbcity.Text;
+            double age = double.Parse(txtage.Text);
+            String sex;
+            DateTime date = DateTime.Parse(joinedDate.Text);
+            String contact = txtcontact.Text;
 
+            if (male.Checked == true)
+            {
+                sex = "Male";
+            }
+            else
+            {
+                sex = "Female";
+            }
+
+            con.Open();
+            SqlCommand c = new SqlCommand("exec UpdateEmpData '" + empid + "','" + empName + "','" + city + "','" + age + "','" + sex + "','" + date + "','" + contact + "'", con);
+            c.ExecuteNonQuery();
+            MessageBox.Show("Successfully Updated...!");
+            GetEmployeeList();
+            con.Close();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            //
         }
     }
 }
