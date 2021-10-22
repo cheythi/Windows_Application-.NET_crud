@@ -94,7 +94,17 @@ namespace CRUD
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //
+            //Delete Btn
+            if(MessageBox.Show("Are you sure want to delete...?","Delete Document", MessageBoxButtons.YesNo)== DialogResult.Yes)
+            {
+                int empid = int.Parse(txtempID.Text);
+                con.Open();
+                SqlCommand c = new SqlCommand("exec DeleteEmpData '" + empid + "'", con);
+                c.ExecuteNonQuery();
+                MessageBox.Show("Successfully Deleted...!");
+                GetEmployeeList();
+                con.Close();
+            }
         }
     }
 }
