@@ -106,5 +106,16 @@ namespace CRUD
                 con.Close();
             }
         }
+
+        private void load_Click(object sender, EventArgs e)
+        {
+            //load specific record
+            int empid = int.Parse(txtempID.Text);
+            SqlCommand c = new SqlCommand("exec LoadEmpData '" + empid + "'", con);
+            SqlDataAdapter sd = new SqlDataAdapter(c);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            tbl.DataSource = dt;
+        }
     }
 }

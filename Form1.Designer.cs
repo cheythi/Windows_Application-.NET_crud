@@ -49,6 +49,7 @@ namespace CRUD
             this.tbl = new System.Windows.Forms.DataGridView();
             this.updateBtn = new System.Windows.Forms.Button();
             this.dltBtn = new System.Windows.Forms.Button();
+            this.load = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -259,12 +260,25 @@ namespace CRUD
             this.dltBtn.UseVisualStyleBackColor = false;
             this.dltBtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // load
+            // 
+            this.load.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.load.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.load.Location = new System.Drawing.Point(733, 103);
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(99, 36);
+            this.load.TabIndex = 20;
+            this.load.Text = "Load";
+            this.load.UseVisualStyleBackColor = false;
+            this.load.Click += new System.EventHandler(this.load_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(863, 667);
+            this.Controls.Add(this.load);
             this.Controls.Add(this.dltBtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.tbl);
@@ -317,6 +331,7 @@ namespace CRUD
         private System.Windows.Forms.DataGridView tbl;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button dltBtn;
+        private System.Windows.Forms.Button load;
     }
 }
 
